@@ -58,9 +58,15 @@ public class Consultorio {
 
 	private static void cadastrarMedico(ArrayList<Medico> medicos) {
 		System.out.println("\n=== Cadastro de Médicos ===");
-
+		
+		
 		System.out.print("CRM: ");
 		int crm = scanner.nextInt();
+		Medico medico = buscarMedicoPorCRM(crm, medicos);
+		if(medico != null) {
+			System.out.println("CRM já cadastrado.");
+			return;
+		}
 		scanner.nextLine();
 
 		System.out.print("Nome: ");
